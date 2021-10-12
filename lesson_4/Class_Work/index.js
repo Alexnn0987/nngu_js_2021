@@ -246,51 +246,244 @@
 // console.log('FINISH');
 
 //////////////////////////////////////////////////// ЛОГИЧЕСКИЕ ОПЕРАТОРЫ (&&, ||, !)
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// if (1 || 0) {
-//     console.log("Сработало")
+
+// const a = 0;
+
+// const b = 1;
+
+// const result1 = a || b;
+// console.log(result1);
+
+//////////////////////////////////////////////////
+
+// const a = 100;
+
+// const b = 1;
+
+// const result1 = a || b;
+// console.log(result1);
+
+//////////////////////////////////////////////////
+
+// const a = false;
+
+// const b = 0;
+
+// const result1 = a || b;
+// console.log(result1);
+
+//////////////////////////////////////////////////
+
+// const a = 0;
+// const b = 1;
+
+// const result = a && b;
+
+// console.log(result);
+
+//////////////////////////////////////////////////
+
+// const a = 10;
+// const b = 1;
+
+// const result = a && b;
+
+// console.log(result);
+
+//////////////////////////////////////////////////
+
+// const a = 10;
+// const b = "";
+
+// const result = a && b;
+
+// console.log(result);
+
+//////////////////////////////////////////////////
+
+// const a = 10;
+// const b = "d";
+
+// const result = a && b;
+
+// console.log(result);
+
+//////////////////////////////////////////////////
+
+// const a = 1;
+// const b = 2;
+// const c = 3;
+
+// if (a > b && a > c) {
+//   console.log(a);
+// } else if (b > a && b > c) {
+//   console.log(b);
+// } else {
+//   console.log(c);
 // }
 
-// const a = 0
-// const b = 1
-// let result1 = a || b
-// let result2 = a || false || "value" || b
-// let result3 false || "" || 0
+/////////////////////////////////////////////////
 
-// if (1 && 0) {
-//     console.log("Не сработало")
+// const a = 10;
+// const b = 2;
+// const c = 3;
+
+// if (a > b && a > c) {
+//   console.log(a);
+// } else if (b > a && b > c) {
+//   console.log(b);
+// } else {
+//   console.log(c);
 // }
 
-// const a = 0
-// const b = 1
-// let result1 = a && b
-// let result2 = b && true && 'value'
+/////////////////////////////////////////////////
 
-// console.log('START');
+// const a = 10;
+// const b = 200;
+// const c = 3;
 
-// let sumAvto = 300;
-// let avtoDay = 10;
-// let day = 0;
-
-// for (let i = sumAvto; i > avtoDay; i = i / 2) {
-//   day = day + 1;
-//   console.log('продажа авто ${i}');
+// if (a > b && a > c) {
+//   console.log(a);
+// } else if (b > a && b > c) {
+//   console.log(b);
+// } else {
+//   console.log(c);
 // }
 
-// console.log('FINISH');
+////////////////////////////////////////////////
 
-// console.log('START');
+// const a = 10;
+// const b = 200;
+// const c = 3;
+// const d = 1000;
 
-// let N = 300;
-// let M = 26;
+// if (a > b && a > c) {
+//   console.log(a);
+// } else if (b > a && b > c) {
+//   console.log(b);
+// } else {
+//   console.log(c);
+// }
+
+// console.log((a && b) || (c && d));
+
+/////////////////////////////////////////////////
+
+// const name = '';
+
+// if (!name) {
+//   console.log('Имя нет');
+// } else {
+//   console.log('Имя есть');
+// }
+
+/// тоже самое, что и предыдущий код
+
+// if (name) {
+//   console.log('Имя есть');
+// } else {
+//   console.log('Имя нет');
+// }
+
+/////////////////////////////////////////////////
+
+//console.log(!"Alex");  // false
+
+/////////////////////////////////////////////////
+
+//console.log(!!"Alex");  // true
+//console.log(Boolean("Alex"));  // true тоже самое, что и предыдущий код
+
+/////////////////////////////////////////////////
+
+// console.log('start');
+
+// while (true) {
+//   console.log('loop');
+// }
+// console.log('end');  // бесконечный цикл, будет выполняться бесконечно (остановить ctrl + C)
+
+//////////////////////////////////////////////////
+
+// console.log('start');
+
+// while (false) {
+//   console.log('loop');
+// }
+// console.log('end');
+
+//////////////////////////////////////////////////
+
+// let i = 0;
+
+// while (i < 10) {
+//   console.log(i);
+//   i += 1;  // одинаковые строчки i++; и i = i + 1;
+// }
+// console.log("end");
+
+//////////////////////////////////////////////////
+
+// let i = 0;
+
+// do {
+//   console.log('WORK');
+// } while (i);
+
+// console.log('end');
+
+//////////////////////////////////////////////////
+
+// for(;;){
+
+// }
+
+//////////////////////////////////////////////////
+
+// console.log('start');
+
+// while (true) {
+//   console.log('loop');
+//   break;
+// }
+// console.log('end');
+
+//////////////////////////////////////////////////
+
+// console.log('start');
+// let i = 0;
+// while (true) {
+//   console.log('loop');
+//   i += 1;
+//   if (i > 10) break;
+// }
+// console.log('end'); // выдаст 10 раз 'loop' и остановится
+
+//////////////////////////////////////////////////
+
+// console.log('start');
+// let i = 0;
+// while (true) {
+//   console.log('loop');
+//   i += 1;
+// }
+// console.log('end'); // опять будет бесконечный цикл
+
+/////////////////////////////////////////////////
+// ЗАДАЧА 1. Вывести в консоль заданную строку N раз.
+
+// let i = 0;
+// while (true) {
+//   console.log('Учиться!');
+//   i += 1;
+//   if (i > 9) break;
+// }
+
+/////////////////////////////////////////////////
+// ЗАДАЧА 2. Ежедневно количество доступных автомобилей в салоне уменьшается в два раза. Выяснить, на какой день продаж, количество доступных к покупке авто станет меньше M, если известно, что в первый день продаж всено было N автомобилей.
+
+// let N = 330;
+// let M = 50;
 
 // let days = 0;
 
@@ -300,4 +493,4 @@
 // }
 // console.log(days);
 
-// console.log('FINISH');
+//////////////////////////////////////////////////
