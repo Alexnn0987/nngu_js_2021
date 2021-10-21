@@ -273,7 +273,7 @@
 // sum();  // чистая функция
 
 //////////////////////////////////////////////////////////////////
-
+// ЗАДАЧА 1.
 // let name = 'Max';
 
 // function sayHi(userName) {
@@ -287,7 +287,7 @@
 // sayHi(name);
 
 ///////////////////////////////////////////////////////////////////
-
+//ЗАДАЧА 2.
 // function exp(a, b = 1) {
 //   console.log(a ** b);
 // }
@@ -494,3 +494,24 @@
 // console.log(getString);
 
 //////////////////////////////////////////////////////////////////
+// Callback функции
+
+// let sum = function (a, b) {
+//   return a + b;
+// };
+
+// let diff = function (a, b) {
+//   return a - b;
+// };
+
+// let mult = function (a, b, num, cb) {
+//   // логика
+//   return cb(a, b) * num;
+// };
+
+// let result = mult(1, 2, 3, sum);
+// console.log(result);
+// let result2 = mult(1, 2, 3, diff);
+// console.log(result2);
+
+/////////////////////////////////////////////////////////////////

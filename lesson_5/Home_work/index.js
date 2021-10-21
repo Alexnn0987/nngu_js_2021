@@ -1,7 +1,7 @@
 // ЗАДАНИЯ
 // 1. Сделайте функцию, которая возвращает квадрат числа. Число передается параметром.
 
-// let squareIt = (a, b) => a * b;
+// let squareIt = (a, b) => a ** b;
 // console.log(squareIt(5, 5));        // 25
 
 // 2. Сделайте функцию, которая возвращает сумму двух чисел.
@@ -81,16 +81,37 @@
 
 // 8. Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет, что оно больше нуля и меньше 10. Если это так - пусть функция возвращает true, если не так - false.
 
-// let isNumberInRange = (a) => {
-//   if (a > 0 && a < 10) {
+// let isNumberInRange = (num) => {
+//   if (num > 0 && num < 10) {
 //     return true;
 //   } else {
 //     return false;
 //   }
 // };
-// console.log(isNumberInRange(9));    // true
+// console.log(isNumberInRange(9));        // true
 
 // 9. Дан массив с числами. Запишите в новый массив только те числа, которые больше нуля и меньше 10-ти. Для этого используйте вспомогательную функцию isNumberInRange из предыдущей задачи.
+
+// let isNumberInRange = (num) => {
+//   if (num > 0 && num < 10) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+
+// let getNewArr = (arr) => {
+//   let newArr = [];
+
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (isNumberInRange(arr[i])) {
+//       newArr.push(arr[i]);
+//     }
+//   }
+//   return newArr;
+// };
+
+// console.log(getNewArr([-13, -2, 0, 4, 5, 7, 9, 11]));
 
 // 10. Сделайте функцию getDigitsSum (digit - это цифра), которая параметром принимает целое число и возвращает сумму его цифр.
 
