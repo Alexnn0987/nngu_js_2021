@@ -115,7 +115,33 @@
 
 // 10. Сделайте функцию getDigitsSum (digit - это цифра), которая параметром принимает целое число и возвращает сумму его цифр.
 
+// let getDigitsSum = (digit) => {
+//   let sumDigit = 0;
+//   digit = String(digit);
+//   for (let i = 0; i < digit.length; i += 1) {
+//     sumDigit = sumDigit + Number(digit[i]);
+//   }
+//   return sumDigit;
+// };
+
+// console.log(getDigitsSum(634));
+
 // 11. Найдите все года от 1 до 2020, сумма цифр которых равна 13. Для этого используйте вспомогательную функцию getDigitsSum из предыдущей задачи.
+
+// let getDigitsSum = (digit) => {
+//   let sumDigit = 0;
+//   digit = String(digit);
+//   for (let i = 0; i < digit.length; i += 1) {
+//     sumDigit = sumDigit + +digit[i];
+//   }
+//   return sumDigit;
+// };
+
+// for (let j = 1; j < 2020; j += 1) {
+//   if (getDigitsSum([j]) === 13) {
+//     console.log(j);
+//   }
+// }
 
 // 12. Сделайте функцию isEven() (even - это четный), которая параметром принимает целое число и проверяет: четное оно или нет. Если четное - пусть функция возвращает true, если нечетное - false.
 
