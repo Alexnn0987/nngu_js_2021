@@ -1,37 +1,37 @@
 // 1. Преобразовать строку в массив слов
 // Напишите функцию stringToarray(str), которая преобразует строку в массив слов.
 
-// var str = 'Каждый охотник желает знать';
-// function stringToarray(str) {
-//   var arr = str.split();
+// let str = 'Каждый охотник желает знать';
+// let stringToarray = (str) => {
+//   let arr = str.split();
 //   console.log(arr);
 // }
 
-// var arr = stringToarray(str);
+// let arr = stringToarray(str);
 // //  [ 'Каждый охотник желает знать' ]
 
 ////////////////////////////////////////////////////////////
 // 2. Удаление указанного количества символов из строки
 // Напишите функцию delete_characters(str, length), которая возвращает подстроку, состоящую из указанного количества символов.
 
-// var str = 'Каждый охотник желает знать';
-// function delete_characters(str, length) {
-//   var delStr = str.substr(6, 8);
+// let str = 'Каждый охотник желает знать';
+// let delete_characters = (str, length) => {
+//   let delStr = str.substr(6, 8);
 //   console.log(delStr);
 // }
 
-// var del = delete_characters(str);
+// let del = delete_characters(str);
 // //  охотник
 
 ////////////////////////////////////////////////////////////
 // 3. Вставить тире между словами строки
 // Напишите функцию insert_dash(str), которая принимает строку str в качестве аргумента и вставляет тире (-) между словами. При этом все символы строки необходимо перевести в верхний регистр.
 
-// var str = 'HTML JavaScript PHP';
+// let str = 'HTML JavaScript PHP';
 
-// function insert_dash(str) {
+// let insert_dash = (str) => {
 //   return str.toUpperCase().replace(/\s/g, '-');
-// }
+// };
 
 // console.log(insert_dash(str));
 // //  HTML-JAVASCRIPT-PHP
@@ -40,11 +40,11 @@
 // 4. Сделать первую букву строки прописной
 // Напишите функцию, которая принимает строку в качестве аргумента и преобразует регистр первого символа строки из нижнего регистра в верхний.
 
-// var str = 'string not starting with capital';
+// let str = 'string not starting with capital';
 
-// function cursive_letter(str) {
+// let cursive_letter = (str) => {
 //   return str[0].toUpperCase() + str.slice(1);
-// }
+// };
 
 // console.log(cursive_letter(str));
 // //  String not starting with capital
@@ -53,43 +53,51 @@
 // 5. Первая буква каждого слова заглавная
 // Напишите функцию capitalize(str), которая возвращает строку, в которой каждое слово начинается с заглавной буквы.
 
-var str = 'каждый охотник желает знать';
+// let str = 'каждый охотник желает знать';
 
-function capitalize(str) {
-  return str[0].toUpperCase() + str.slise(1, 8, 16, 23);
-}
+// let capitalize = (str) => {
+//   return str.replace(/(^|\s)\S/g, (text) => text.toUpperCase());
+// };
 
-console.log(capitalize(str));
+// console.log(capitalize(str));
+// //  Каждый Охотник Желает Знать
 
 ////////////////////////////////////////////////////////////
 // 6. Смена регистра символов строки
 // Напишите функцию change_register(str), которая принимает в качестве аргумента строку и и заменяет регистр каждого символа на противоположный. Например, если вводится «КаЖдЫй ОхОтНиК», то на выходе должно быть «кАжДыЙ оХоТнИк».
 
-// var str = "КаЖдЫй ОхОтНиК жЕлАеТ зНаТь";
+// let str = 'КаЖдЫй ОхОтНиК жЕлАеТ зНаТь';
 
-// function change_register(str) {
-
-// // Ваш код
-
-// }
+// let change_register = (str) => {
+//   return str.replace(/[\S]/g, (text) => {
+//     if (text === text.toLowerCase()) {
+//       return text.toUpperCase();
+//     } else if (text === text.toUpperCase()) {
+//       return text.toLowerCase();
+//     }
+//   });
+// };
+// console.log(change_register(str));
+// //  кАжДыЙ оХоТнИк ЖеЛаЕт ЗнАтЬ
 
 ////////////////////////////////////////////////////////////
 // 7. Удалить все не буквенно-цифровые символы
 // Напишите функцию remove_char(str), которая возвращает строку, очищенную от всех не буквенно-цифровых символов.
 
-// var str = "every., -/ hunter #! wishes ;: {} to $ % ^ & * know";
+// let str = 'every., -/ hunter #! wishes ;: {} to $ % ^ & * know';
 
-// function remove_char(str) {
-//     ...ваш код...
+// let remove_char = (str) => {
+//   return str.match(/\w{2,6}/g);
 // };
+// console.log(remove_char(str));
+// //  [ 'every', 'hunter', 'wishes', 'to', 'know' ]
 
 ////////////////////////////////////////////////////////////
 // 8. Нулевое заполнение строки
 // Напишите функцию zeros(num, len), которая дополняет нулями до указаной длины числовое значение с дополнительным знаком «+» или « -« в зависимости от передаваемого аргумента.
 
-// function zeros (num, len, sign) {
-//     ...ваш код...
-// };
+let zeros = (num, len, sign) => {};
+console.log(zeros());
 
 ////////////////////////////////////////////////////////////
 // 9. Сравнение строк без учёта регистра
