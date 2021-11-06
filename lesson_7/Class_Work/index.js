@@ -520,3 +520,275 @@
 // };
 // console.log(comparison(arr1, arr2));
 /////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//  Копирование объектов (ЧАСТЬ 2)
+
+// let obj1 = { a: 'Hello' };
+// let obj11 = { b: 'Hello Alex' };
+// let obj2 = Object.assign({}, obj1, obj11);
+
+// console.log(obj1, obj2);
+// obj1.a = 'Goodbye';
+// console.log(obj1, obj2);
+
+///////////////////////////////////////////////
+
+// let obj1 = {
+//   sayHello: 'Hello',
+//   user: { name: 'Alex', age: { data: '28', year: '1996', mount: '03' } },
+// };
+// let obj2 = Object.assign({}, obj1);
+
+// console.log(obj1.user, obj2.user);
+
+// obj1.user.age.year = '2021';
+// console.log(obj1.user, obj2.user);
+
+//////////////////////////////////////////////
+
+// let obj1 = {
+//   sayHello: 'Hello',
+//   user: { name: 'Alex', age: { data: '28', year: '1996', mount: '03' } },
+// };
+// //   let obj2 = Object.assign({}, obj1);
+
+// console.log(JSON.stringify(obj1));
+// let obj2 = JSON.parse(JSON.stringify(obj1));
+
+// // console.log(obj1.user, obj2.user);
+
+// // obj1.user.age.year = '2021';
+// // console.log(obj1.user, obj2.user);
+
+/////////////////////////////////////////////
+
+// let obj1 = {
+//   sayHello: 'Hello',
+//   user: { name: 'Alex', age: { data: '28', year: '1996', mount: '03' } },
+// };
+// //   let obj2 = Object.assign({}, obj1);
+
+// // console.log(JSON.stringify(obj1));
+// let obj2 = JSON.parse(JSON.stringify(obj1));
+
+// console.log(obj1.user, obj2.user);
+
+// obj1.user.age.year = '2021';
+// console.log(obj1.user, obj2.user);
+
+////////////////////////
+// тоже самое, что и предыдущее...
+
+// let obj1 = {
+//   sayHello: 'Hello',
+//   user: { name: 'Alex', age: { data: '28', year: '1996', mount: '03' } },
+// };
+// //   let obj2 = Object.assign({}, obj1);
+
+// // console.log(JSON.stringify(obj1));
+// let jsonString = JSON.stringify(obj1);
+// let obj2 = JSON.parse(jsonString);
+
+// console.log(obj1.user, obj2.user);
+
+// obj1.user.age.year = '2021';
+// console.log(obj1.user, obj2.user);
+
+//////////////////////////////////////////////////////////////////////////////////
+//  Оператор расширения (spread)
+
+// let arr1 = [1, 2, 3, 4];
+
+// let arr2 = [7, 8, 9];
+
+// let arr3 = [...arr1, 5, 6, ...arr2];
+// console.log(arr3);
+
+///////////////////////////////////////
+
+// let obj1 = { name: 'Alex' };
+
+// let obj2 = { ...obj1 };
+// console.log(obj1, obj2);
+
+// obj1.name = 'Ivan';
+// console.log(obj1, obj2);
+
+///////////////////////////////////
+
+// let obj1 = { name: 'Alex' };
+
+// let obj2 = { name: 'Max', ...obj1 };
+// console.log(obj1, obj2);
+
+// obj1.name = 'Ivan';
+// console.log(obj1, obj2);           //  { name: 'Alex' } { name: 'Alex' }
+//                                    // { name: 'Ivan' } { name: 'Alex' }
+
+///////////////////////////////////
+
+// let obj1 = { name: 'Alex' };
+
+// let obj2 = { name: 'Max', ...obj1 };
+// console.log(obj1, obj2);              //  { name: 'Alex' } { name: 'Alex' }
+
+///////////////////////////////////
+
+// let obj1 = { name: 'Alex', age: '25' };
+
+// let obj2 = { ...obj1, name: 'Max' };
+// console.log(obj1, obj2);              //   { name: 'Alex', age: '25' } { name: 'Max', age: '25' }
+
+///////////////////////////////////
+
+// let obj1 = { name: 'Alex', age: '25' };
+
+// let obj2 = { ...obj1, key: 'user1' };
+// console.log(obj1, obj2);
+
+//////////////////////////////////////////////////////////////////////////////////
+//  Остаточные параметры (rest оператор)
+
+// let getSum = (...args) => {
+//   console.log(args);
+// };
+// getSum(1, 2, 3, 4);  //  [ 1, 2, 3, 4 ]
+
+/////////////////////////////////////////
+
+// let getSum = (a, b, ...args) => {
+//   console.log(args);
+// };
+// getSum(1, 2, 3, 4);     //  [ 3, 4 ]
+
+/////////////////////////////////////////
+
+// let getSum = (a, b, ...args) => {
+//   console.log(a, b);
+//   console.log(args);
+// };
+// getSum(1, 2, 3, 4);  //  1 2
+//                      //  [ 3, 4 ]
+
+/////////////////////////////////////////
+
+// let getSum = (type, ...args) => {
+//   if (type === 'sum') {
+//     // сумма
+//     console.log(args, 'sum');
+//   } else {
+//     // вычитать
+//     console.log(args, 'negative');
+//   }
+// };
+// getSum('sum', 1, 2, 3, 4, 5, 6, 78, 9, 0);  //  [ 1,  2, 3, 4, 5, 6, 78, 9, 0] sum
+
+// функция которая принимает первым аргументом принимает действие (суммаБ вычитание), после принимает параметры для
+
+//////////////////////
+
+// let getSum = (type, ...args) => {
+//   if (type === 'sum') {
+//     // сумма
+//     console.log(Array.isArray(args), 'sum');
+//   } else {
+//     // вычитать
+//     console.log(args, 'negative');
+//   }
+// };
+// getSum('sum', 1, 2, 3, 4, 5, 6, 78, 9, 0);  //  true sum
+
+///////////////////////////////////////////////////////////////////////////////////////
+//  Перебор значений массива
+
+// let arr = [1, 2, 3, 4];
+
+// for (let elem of arr) {
+//   console.log(elem);
+// }
+
+// //  тоже самое, что и предыдущее...
+
+// for(let i = 0; i < arr.length; i += 1){
+//     console.log(arr[i]);
+// }
+
+/////////////////////////////////////////////
+
+// let obj = [1, 2, 3, 4];
+// for (let elem in obj) {
+//   console.log(elem);
+// }                        // 0 1 2 3
+
+////////////////////////////////////////////////////////////////////////////////////////
+//  Перебор значений объекта
+
+// let obj = { a: 1, b: 2 };
+// for (let elem in obj) {
+//   console.log(elem);
+// }
+//   // a
+//   // b
+
+////////////////////////
+
+// let obj = { a: 1, b: 2 };
+// for (let elem in obj) {
+//   console.log(obj[elem]);
+// }
+//  // 1
+//  // 2
+
+////////////////////////
+
+// let obj = { a: 1, b: 2 };
+// for (let elem in obj) {
+//   console.log(obj[elem]);
+//   break;
+// }
+// // 1
+
+///////////////////////////////////////////////////////////////////////////////////////
+// Практика
+// ЗАДАЧА 1. Создайте объект и скопируйте данный объект с помощью: Object.assign() и spread оператора. Изменить любое свойство в копии объекта, и проверить не изменился ли исходный.
+
+// let arr = { user: 'Moscow' };
+// let newArr = { user: 'Kiev' };
+// console.log(newArr);
+//доделать
+
+// ЗАДАЧА 2. Написать функцию которая будет принимать n-ое количество аргументов, в качестве результата функция будет возвращать сумму всех четных элементов. Для решения использовать цикл for (... of …).
+
+// let someArgs = (...args) => {
+//   let result = 0;
+//   for (let elem of args) {
+//     if (elem % 2 === 0) {
+//       result += elem;
+//     }
+//   }
+//   return result;
+// };
+// console.log(someArgs(1, 2, 4, -6, 2, 8, 9));
+
+// ЗАДАЧА 3. Написать функцию которая будет принимать два массива, и в качестве результата будет возвращать только те значения которые есть и в первом и во втором массиве.
+
+// let getCommonValue = (arr1, arr2) => {
+//   let result = [];
+//   for (let i = 0; i < arr1.length; i += 1) {
+//     if (arr2.includes(arr1[i]) && !result.includes(arr1[i])) {
+//       result.push(arr1[i]);
+//     }
+//   }
+//   return result;
+// };
+// console.log(getCommonValue([1, 2, 3, 4, 5, 5, 4], [6, 5, 4]));     // [ 4, 5 ]
+
+//////////////////////////////////////////
+// решение через фильтр
+
+// let getCommonValue = (arr1, arr2) => {
+//   return arr1.filter((el, i) => arr2.includes(el));
+// };
+// console.log(getCommonValue([1, 2, 3, 4, 5, 5, 4], [6, 5, 4]));    //[ 4, 5, 5, 4 ]
+
+///////////////////////////////////////////////////////////////////////////////////////
