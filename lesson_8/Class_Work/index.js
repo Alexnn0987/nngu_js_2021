@@ -6,7 +6,7 @@
 ////////////////////////////////////////
 //
 
-// console.log(this);  // для браузера
+// console.log(this);  // для браузера глобальный объект window
 //////////////////////
 // console.log(global);  // для Node.js
 
@@ -29,7 +29,8 @@
 // name = 'Max';
 // console.log(global.name);
 
-// почему нет name?
+// почему нет name?!
+
 /////////////////////////////////////////////
 
 // let user = {
@@ -40,9 +41,9 @@
 //   },
 // };
 
-// user.getName();
+// user.getName();   // Alex
 
-///////////////
+/////////////////
 // тоже самое
 
 // let user = {
@@ -53,9 +54,10 @@
 //   },
 // };
 
-// user.getName();
+// user.getName();   // Alex
 
 ///////////////////////////////
+// тоже самое
 
 // function getName() {
 //   console.log(this.name);
@@ -66,7 +68,7 @@
 //   getUserName: getName,
 // };
 
-// user.getUserName();
+// user.getUserName();    //  Alex
 
 ///////////////////////////////
 
@@ -88,6 +90,8 @@
 // };
 
 // admin.getAdminName();
+// // Alex
+// // Max
 
 //////////////////////////////
 
@@ -106,10 +110,11 @@
 //   getAdminName: getName,
 // };
 
-// user.getUserName();
-// admin.getAdminName();
+// user.getUserName();                    // { name: 'Alex', age: '25', getUserName: [Function: getName] }
+// admin.getAdminName();                  // { name: 'Max', age: '45', getAdminName: [Function: getName] }
 
 ////////////////////////////////
+// тоже самое
 
 // let user = {
 //   name: 'Alex',
@@ -127,8 +132,8 @@
 //   },
 // };
 
-// user.getUserName();
-// admin.getAdminName();
+// user.getUserName();             // { name: 'Alex', age: '25', getUserName: [Function: getName] }
+// admin.getAdminName();           // { name: 'Max', age: '45', getAdminName: [Function: getName] }
 
 /////////////////////////////////
 
@@ -153,9 +158,9 @@
 //   getAdminName: getName,
 // };
 
-// user.getUserName();
-// user1.getUserName();
-// admin.getAdminName();
+// user.getUserName();        // Alex
+// user1.getUserName();       // Ivan
+// admin.getAdminName();      // Max
 
 /////////////////////////////////
 // Динамически
@@ -197,7 +202,7 @@
 // user.getUserName();
 // console.log(user);
 
-/////////////////////////////////
+///////////////////////////////////////////
 //
 
 // function example() {
@@ -206,9 +211,9 @@
 // const testObject = {
 //   testMethod: example,
 // };
-// testObject.testMethod();
+// testObject.testMethod();   //  { testMethod: [Function: example] }
 
-//////////////////////////////////
+///////////////////////////////////////////
 
 // let hero = {
 //   name: 'Jon',
@@ -230,7 +235,10 @@
 //   },
 // };
 
+// console.log(hero.fight(), dracula.fight());  // 200 350
+
 ///////////////
+// тоже самое
 // хороший пример this
 
 // function startFight() {
@@ -258,13 +266,14 @@
 // if (hero.fight() > dracula.fight()) {
 //   console.log('Герой победил!! УРА');
 // } else {
-//   console.log('Провал. вы погибли');
+//   console.log('Провал, вы погибли');
 // }
 // // 200 350
-// //Провал. вы погибли
+// // Провал, вы погибли
 
 /////////////////////////////////////////////////////////////////////////
 // Ключевое слово this в стрелочных функциях
+// при стрелочных функциях не работает
 
 // let startFight = () => {
 //   return this.strange * this.agility;
@@ -295,7 +304,6 @@
 // }
 // // NaN NaN
 // // Провал. вы погибли
-// // при стрелочных функциях не работает
 
 //////////////////////////////////////////////
 
@@ -334,6 +342,18 @@
 // Практика
 // Создать объект который будет описывать любой населенный пункт (на ваш выбор). Объект должен содержать свойства описывающие: название и численность. Так же объект должен содержать два метода: первый должен возвращать название города, а второй должен возвращать численность.
 
+// let town = {
+//   townName: 'Moscow',
+//   population: '15 ml',
+//   getTownName: function () {
+//     return this.townName;
+//   },
+//   getPopulation: function () {
+//     return this.population;
+//   },
+// };
+// console.log(town.getTownName());   //  Moscow
+
 // *Дополнительно, добавить метод, который будет устанавливать новое значение для выбранного свойства из объекта описывающего город.
 
 // let town = {
@@ -345,14 +365,17 @@
 //   getPopulation: function () {
 //     return this.population;
 //   },
+
 //   setSomeValue: function (key, value) {
 //     this[key] = value;
 //   },
 // };
 
+// console.log(town); //  проверяем значения до
 // town.setSomeValue('townName', 'Paris');
 // town.setSomeValue('population', '9 ml');
-// console.log(town.getTownName());
+// console.log(town); //  проверяем значения после
+// console.log(town.getTownName()); // Paris
 
 /////////////////////////////////////////////////////////////////////////
 
