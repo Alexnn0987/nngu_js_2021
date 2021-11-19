@@ -44,8 +44,8 @@
 // Однако, его вызов приводит к ошибке. Почему?
 
 // function askPassword(ok, fail) {
-//   let password = prompt("Password?", '');
-//   if (password == "rockstar") ok();
+//   let password = prompt('Password?', '');
+//   if (password == 'rockstar') ok();
 //   else fail();
 // }
 
@@ -53,16 +53,15 @@
 //   name: 'Вася',
 
 //   loginOk() {
-//     alert(`${this.name} logged in`);
+//     console.log(`${this.name} logged in`);
 //   },
 
 //   loginFail() {
-//     alert(`${this.name} failed to log in`);
+//     console.log(`${this.name} failed to log in`);
 //   },
-
 // };
 
-// askPassword(user.loginOk, user.loginFail);
+// askPassword(user.(loginOk), user.(loginFail));
 
 ////////////////////////////////////////////////////////////////////////////////////
 // ЗАДАЧА 6. Объект user был изменён. Теперь вместо двух функций loginOk/loginFail у него есть только одна – user.login(true/false).
@@ -114,4 +113,4 @@
 
 //   console.log(example(3)(4)(5));  //  12
 
-/////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////

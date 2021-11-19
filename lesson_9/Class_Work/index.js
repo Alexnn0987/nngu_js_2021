@@ -339,3 +339,236 @@
 // console.log(postTwo);
 
 ////////////////////////////////////////////////////////////////////////////////
+// дописать
+////////////////////////////////////////////////////////////////////////////////
+
+// class Parent {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   sayName() {
+//     return `Привет, мое имя ${this.name}`;
+//   }
+// }
+
+// const firstParent = new Parent('Max');
+// console.log(firstParent);  //  Parent { name: 'Max' }
+
+///////////////////////////////////////
+
+// class Parent {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   sayName() {
+//     return `Привет, мое имя ${this.name}`;
+//   }
+// }
+
+// const firstParent = new Parent('Max');
+// console.log(firstParent);                //  Parent { name: 'Max' }
+// console.log(firstParent.sayName());      //  Привет, мое имя Max
+
+////////////////////////////////////////////
+
+// class Parent {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   sayName() {
+//     return `Привет, мое имя ${this.name}`;
+//   }
+// }
+
+// const firstParent = new Parent('Max'); //  Parent { name: 'Max' }
+
+// class Child extends Parent {
+//   constructor(name, lastName) {
+//     super(name);
+//     this.lastName = lastName;
+//   }
+
+//   sayFullName() {
+//     return `Мое полное имя ${this.lastName}, ${this.name}`;
+//   }
+// }
+
+// const firstChild = new Child('Ivan', 'Petrov');
+// console.log(firstChild);
+// // Child { name: 'Ivan', lastName: 'Petrov' }
+
+////////////////////////////////////////////
+
+// class Parent {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   sayName() {
+//     return `Привет, мое имя ${this.name}`;
+//   }
+// }
+
+// const firstParent = new Parent('Max'); //  Parent { name: 'Max' }
+
+// class Child extends Parent {
+//   constructor(name, lastName) {
+//     super(name);
+//     this.lastName = lastName;
+//   }
+
+//   sayFullName() {
+//     return `Мое полное имя ${this.lastName}, ${this.name}`;
+//   }
+// }
+
+// const firstChild = new Child('Ivan', 'Petrov');
+// console.log(firstChild);
+// console.log(firstChild.sayFullName());
+// console.log(firstChild.sayName());
+
+// // Child { name: 'Ivan', lastName: 'Petrov' }
+// // Мое полное имя Petrov, Ivan
+// // Привет, мое имя Ivan
+
+//////////////////////////////////////////////
+
+// class Parent {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   sayName() {
+//     return `Привет, мое имя ${this.name}`;
+//   }
+// }
+
+// const firstParent = new Parent('Max'); //  Parent { name: 'Max' }
+
+// class ChildTwo extends Parent {
+//   constructor(name, lastName) {
+//     super(name);
+//     this.lastName = lastName;
+//   }
+
+//   sayFullName() {
+//     return `Мое полное имя ${this.lastName}, ${this.name}`;
+//   }
+// }
+
+// const firstChildTwo = new ChildTwo('Ivan2', 'Petrov2');
+// console.log(firstChildTwo);
+// console.log(firstChildTwo.sayFullName());
+// console.log(firstChildTwo.sayName());
+
+// // ChildTwo { name: 'Ivan2', lastName: 'Petrov2' }
+// // Мое полное имя Petrov2, Ivan2
+// // Привет, мое имя Ivan2
+///////////////////////////////////////////////////////
+
+// class Parent {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   sayName() {
+//     return `Привет, мое имя ${this.name}`;
+//   }
+// }
+
+// const firstParent = new Parent('Max');
+
+// class Child extends Parent {
+//   constructor(name, lastName) {
+//     super(name);
+//     this.name = name;
+//     this.lastName = lastName;
+//   }
+//   sayName() {
+//     console.log('Это внутренний метод');
+//   }
+//   sayFullName() {
+//     const nameString = `${super.sayName}, ${this.name}`;
+//     return nameString;
+//   }
+// }
+
+// const firstChild = new Child('Ivan2', 'Petrov2');
+// console.log(firstChild);
+// console.log(firstChild.sayFullName());
+// firstChild.sayName();
+
+// ДОПИСАТЬ
+/////////////////////////////////////////////////
+// написать
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+// Создайте класс People, он должен содержать свойства  name (имя), surname (фамилия) и метод getFullName() (возвращает полное имя человека). Создайте класс Worker который будет наследоваться от класса People. Класс Worker должен содержать свойства name, surname унаследованные от родительского класса, и свойства rate (ставка по которой происходит оплата руб/день), day (количество отработанных дней) и метод getSalary() (возвращает заработную плату сотрудника).
+// Создать несколько экземпляров класса Worker с различными данными и проверить корректность работы.
+
+// class People {
+//   constructor(name, surname) {
+//     this.name = name;
+//     this.surname = surname;
+//   }
+//   fullName() {
+//     return `${this.name}, ${this.surname}`;
+//   }
+// }
+
+// class Worker extends People {
+//   constructor(name, surname, rate, days) {
+//     super(name, surname);
+//     this.rate = rate;
+//     this.days = days;
+//   }
+
+//   getSalary() {
+//     return this.days * this.rate;
+//   }
+// }
+
+// let obj = new People('Ivan', 'Ivanov');
+
+// let Ivan = new Worker('Ivan', 'Ivanov', 1000, 21);
+// let Vasily = new Worker('Vasily', 'Smirnov', 5000, 22);
+
+// console.log(`${Ivan.fullName()} имеет зп ${Ivan.getSalary()}`);
+// console.log(`${Vasily.fullName()} имеет зп ${Vasily.getSalary()}`);
+// // Ivan, Ivanov имеет зп 21000
+// // Vasily, Smirnov имеет зп 110000
+
+//////////////////////////////////////
+// таже задача
+// class People {
+//   constructor(name, surname) {
+//     this.name = name;
+//     this.surname = surname;
+//   }
+//   getFullName() {
+//     return `Имя:${this.name}, Фамилия:${this.surname}`;
+//   }
+// }
+
+// const firstName = new People('Ivan', 'Ivanich');
+// console.log(firstName.getFullName());
+
+// class Worker extends People {
+//   constructor(name, surname, rate, daysCount) {
+//     super(name, surname);
+//     this.rate = rate;
+//     this.daysCount = daysCount;
+//   }
+
+//   getSalary() {
+//     return `${this.getFullName()}, Зарплата:${this.daysCount * this.rate}руб.`;
+//   }
+// }
+
+// const firstWorker = new Worker('Semen', 'Semenich', 1500, 20);
+// console.log(firstWorker.getSalary());
+
+// const secondWorker = new Worker('Petr', 'Petrovich', 2900, 20);
+// console.log(secondWorker.getSalary());
+// // Имя:Ivan, Фамилия:Ivanich
+// // Имя:Semen, Фамилия:Semenich, Зарплата:30000руб.
+// // Имя:Petr, Фамилия:Petrovich, Зарплата:58000руб.
+
+////////////////////////////////////////////////////////////////////////////////////////////
